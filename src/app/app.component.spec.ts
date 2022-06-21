@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'Gestor-Multimedia-FOI-frontend'`, () => {
+  it(`should have as title 'GestorMultimedia'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('Gestor-Multimedia-FOI-frontend');
+    expect(app.title).toEqual('GestorMultimedia');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('Gestor-Multimedia-FOI-frontend app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('GestorMultimedia app is running!');
   });
 });
