@@ -25,7 +25,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/gestor-multimedia-foi-frontend'),
+      dir: require('path').join(__dirname, './coverage/proyecto-frontend-boot-camp22'),
       subdir: '.',
       reporters: [
         { type: 'html' },
