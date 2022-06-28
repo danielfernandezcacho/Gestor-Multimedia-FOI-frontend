@@ -11,9 +11,8 @@ export class LoginComponent implements OnInit {
   token: any = 'token inicial';
 
   form: any = {
-    username: null,
+    username: " ",
     password: null,
-    validarPassword: null
   };
 
   isLoginFailed = false;
@@ -44,6 +43,7 @@ export class LoginComponent implements OnInit {
     const { username, password } = this.form;
 
     this.authService.login(username, password).subscribe((data) => {
+
       window.sessionStorage.setItem("authtoken", data.token);
       console.log(`getItem ${window.sessionStorage.getItem("authtoken")}`);
       console.log(data.token);

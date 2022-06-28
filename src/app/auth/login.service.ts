@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 
-const LOGIN_URL = 'https://Gestor-Multimedia-api.herokuapp.com/login';
+const LOGIN_URL = 'https://gestor-multimedia-api.herokuapp.com/login/';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'content-type': 'application/json' }),
