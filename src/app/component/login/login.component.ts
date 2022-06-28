@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from 'src/app/auth/login.service';
-import { TokenStorageService } from '../../services/s-token-storage/token-storage.service';
 
 @Component({
   selector: 'app-login',
@@ -23,7 +22,7 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
-    private tokenStorage: TokenStorageService
+  //  private tokenStorage: TokenStorageService
   ) {}
   ngOnInit(): void {
 
@@ -34,9 +33,9 @@ export class LoginComponent implements OnInit {
       container.classList.remove("sign-up-mode");
     });
 
-    if (this.tokenStorage.getToken()) {
-      this.isLoggedIn = true;
-    }
+    // if (this.tokenStorage.getToken()) {
+    //   this.isLoggedIn = true;
+    // }
   }
 
   login(): void {
@@ -47,7 +46,7 @@ export class LoginComponent implements OnInit {
       window.sessionStorage.setItem("authtoken", data.token);
       console.log(`getItem ${window.sessionStorage.getItem("authtoken")}`);
       console.log(data.token);
-      this.tokenStorage.saveUser(data);
+     // this.tokenStorage.saveUser(data);
 
       this.isLoginFailed = false;
       this.isLoggedIn = true;

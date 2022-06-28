@@ -28,18 +28,6 @@ export class InicioComponent implements OnInit {
     //this.archivosService.create();
   }
 
-  // getArchivosXIDCategoria(): void{
-  //   this.archivosService.listarXID(this.idCarpeta)
-  //   .subscribe(
-  //     (archivos: any) => {
-  //       this.archivos = archivos;
-  //     },
-  //     (error: any) => {
-  //       console.log(error);
-  //     });
-  // }
-
-
      // Get list
      getAllCarpetas(): void {
       this.carpetasService.list()
