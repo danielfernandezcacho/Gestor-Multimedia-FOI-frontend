@@ -23,7 +23,7 @@
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav me-auto ">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#"><img src="img/png.png" width="15px" class="img-fluid"> Home</a>
+                        <a class="nav-link active" aria-current="page" href="#"><img src="../../../assets/logo.png" width="15px" class="img-fluid"> Home</a>
                     </li>
                 </ul>
 
@@ -69,55 +69,22 @@
     <div class="row flex-nowrap">
         <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0">
             <div class="flex-shrink-0 p-3 color-nabvar " >
-                <a href="" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+                <a class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
                   <svg class="bi pe-none me-2" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
                   <span class="fs-5 fw-semibold">Carpetas</span>
                 </a>
-                <ul class="list-unstyled ps-0">
-                  <li class="mb-1">
-                    <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
-                      Carpeta 1
+                    <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" *ngFor="let carpeta of carpetas">
+                      {{carpeta.nombre}}
                     </button>
-                    <div class="collapse show" id="home-collapse">
-                      <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Carpeta 1.1</a></li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Carpeta 1.2</a></li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Carpeta 1.3</a></li>
-                      </ul>
-                    </div>
-                  </li>
-                  <li class="mb-1">
-                    <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-                      Carpeta 2
-                    </button>
-                    <div class="collapse" id="dashboard-collapse">
-                      <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Carpeta 2.1</a></li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Carpeta 2.2</a></li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Carpeta 2.3</a></li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Carpeta 2.4</a></li>
-                      </ul>
-                    </div>
-                  </li>
-                  <li class="mb-1">
-                    <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
-                      Carpeta 3
-                    </button>
-                    <div class="collapse" id="orders-collapse">
-                      <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Carpeta 3.1</a></li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Carpeta 3.2</a></li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Carpeta 3.3</a></li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Carpeta 3.4</a></li>
-                      </ul>
-                    </div>
-                  </li>
-                </ul>
               </div>
         </div>
 
         <div class="col py-3">
-            <div><h1>HOLA</h1></div>
+            <div class="bg-black bg-opacity-50">
+              <h1>DIRECTORIO DE FICHEROS</h1>
+              <div > <h1 *ngFor="let carpeta of carpetas">{{carpeta.nombre}}</h1></div>
+
+            </div>
         </div>
     </div>
 </body>
