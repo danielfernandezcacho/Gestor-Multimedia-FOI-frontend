@@ -16,6 +16,12 @@ export class InicioComponent implements OnInit {
 
  idCarpeta:any = 0;
 
+ archivo: Archivos = {
+  data:'',
+  id_categoria:'',
+  id_usuario:''
+ }
+
   constructor(private carpetasService: CarpetasService, private archivosService: ArchivosService) { }
 
   ngOnInit(): void {
@@ -25,6 +31,13 @@ export class InicioComponent implements OnInit {
   }
 
   agregarArchivo():void{
+    const paquete = {
+      data:this.archivo.data,
+      id_categoria:this.archivo.id_categoria,
+      id_usuario:this.archivo.id_usuario
+    };
+
+
     //this.archivosService.create();
   }
 
