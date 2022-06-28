@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
     password: null,
     validarPassword: null
   };
-  
+
   isLoginFailed = false;
   isLoggedIn = false;
   errorMessage = '';
