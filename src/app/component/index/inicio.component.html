@@ -66,25 +66,49 @@
 
     <!-- barra lateral -->
 
-    <div class="row flex-nowrap">
+    <div class="row">
         <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0">
-            <div class="flex-shrink-0 p-3 color-nabvar " >
+            <div class="p-3 color-nabvar " >
                 <a class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
                   <svg class="bi pe-none me-2" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
                   <span class="fs-5 fw-semibold">Carpetas</span>
                 </a>
-                    <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" *ngFor="let carpeta of carpetas">
+                <div class="row">
+                  <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0">
+                    <button class="btn d-inline-flex align-items-center rounded border-0" (click)="mostrarFicherosCarpeta(0)">
+                      root
+                    </button>
+                    <button class="btn d-inline-flex align-items-center rounded border-0" *ngFor="let carpeta of carpetas" (click)="mostrarFicherosCarpeta(carpeta.id)">
                       {{carpeta.nombre}}
                     </button>
+                  </div>
+                </div>
               </div>
         </div>
 
         <div class="col py-3">
             <div class="bg-black bg-opacity-50">
-              <h1>DIRECTORIO DE FICHEROS</h1>
-              <div > <h1 *ngFor="let carpeta of carpetas">{{carpeta.nombre}}</h1></div>
 
+              <div *ngFor="let carpeta of carpetas">
+                <div *ngIf="carpeta.id == idCarpeta">
+                  <h1>{{carpeta.nombre}}</h1>
+                </div>
+              </div>
+              <h1 *ngIf="idCarpeta == 0">root</h1>
+
+              <div *ngFor="let archivo of archivos" class="row" >
+
+                <div *ngIf="archivo.id_categoria == idCarpeta">
+                <div class="col-2">
+                  <h1 class="fs-5">{{archivo.nombre}}</h1>
+                </div>
+                <div class="col-2">
+                  <h1 class="fs-5">{{archivo.id_categoria}}</h1>
+                </div>
+              </div>
             </div>
+            </div>
+
         </div>
     </div>
 </body>
