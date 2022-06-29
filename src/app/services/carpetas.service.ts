@@ -30,7 +30,7 @@ export class CarpetasService {
   // Delete
   delete(id: any): Observable<any> {
     return this.httpClient
-      .delete(`${this.apiUrl}/${id}`)
+      .delete(`${this.apiUrl}${id}`)
       .pipe(catchError(this.handleError));
   }
 

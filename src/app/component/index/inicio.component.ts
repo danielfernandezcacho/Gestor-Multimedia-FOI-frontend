@@ -19,6 +19,7 @@ export class InicioComponent implements OnInit {
     data: '',
     id_categoria: '',
     id_usuario: '',
+    tipo:'',
   };
 
   carpeta: Carpetas = {
@@ -76,6 +77,16 @@ export class InicioComponent implements OnInit {
     this.carpetasService.create(paquete).subscribe((response) => {
       console.log(response);
     });
+  }
+
+  borrarCarpeta(id:any):void{
+
+    this.idCarpeta = id;
+
+    this.carpetasService.delete(this.idCarpeta).subscribe((response) => {
+      console.log(response);
+    });
+
   }
 
   // Get list
