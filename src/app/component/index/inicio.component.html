@@ -73,14 +73,14 @@
 
 
         </div>
-        <div class="row" *ngFor="let carpeta of carpetas" (click)="mostrarFicherosCarpeta(carpeta.id)">
-          <div class="col-2">
-            <button class="btn d-inline-flex align-items-center rounded border-0">
+        <div class="row" *ngFor="let carpeta of carpetas" >
+          <div class="col-6">
+            <button class="btn d-inline-flex align-items-center rounded border-0" (click)="mostrarFicherosCarpeta(carpeta.id)">
               {{carpeta.nombre}}
             </button>
           </div>
-          <div class="col-2">
-            <button (click)="borrarCarpeta(carpeta.id)" class="bg-danger">X</button>
+          <div class="col-1">
+            <button class="bg-danger">X</button>
           </div>
         </div>
       </div>
@@ -97,7 +97,7 @@
       </div>
       <h1 *ngIf="idCarpeta == 0">root</h1>
 
-      <table class="table">
+      <table class="table table-striped">
         <thead>
           <tr>
             <th scope="col">ID</th>
@@ -105,18 +105,12 @@
             <th scope="col">Tipo</th>
           </tr>
         </thead>
-        <tbody class="table table-striped">
-          <div *ngFor="let archivo of archivos">
-            <div *ngIf="archivo.id_categoria == idCarpeta">
-
-              <tr>
-                <td scope="col">{{archivo.id}}</td>
-                <td scope="col">{{archivo.nombre}}</td>
-                <td scope="col">{{archivo.tipo}}</td>
+        <tbody>
+              <tr *ngFor="let archivo of archivos" >
+                <td scope="col" *ngIf="archivo.id_categoria == idCarpeta">{{archivo.id}}</td>
+                <td scope="col" *ngIf="archivo.id_categoria == idCarpeta">{{archivo.nombre}}</td>
+                <td scope="col" *ngIf="archivo.id_categoria == idCarpeta">{{archivo.tipo}}</td>
               </tr>
-
-            </div>
-          </div>
         </tbody>
       </table>
     </div>
