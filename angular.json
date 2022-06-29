@@ -8,7 +8,11 @@
       "schematics": {
         "@schematics/angular:application": {
           "strict": true
+
         }
+      },
+      "paths": {
+        "tslib" : ["path/to/node_modules/tslib/tslib.d.ts"]
       },
       "root": "",
       "sourceRoot": "src",
@@ -26,10 +30,12 @@
               "src/favicon.ico",
               "src/assets"
             ],
+
             "styles": [
               "src/styles.css"
             ],
             "scripts": []
+
           },
           "configurations": {
             "production": {

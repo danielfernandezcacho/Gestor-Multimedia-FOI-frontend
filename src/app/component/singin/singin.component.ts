@@ -3,16 +3,15 @@ import { Usuario } from 'src/app/models/usuario';
 import { UsuarioService } from 'src/app/services/Usuarios/usuarios.service';
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  selector: 'app-singin',
+  templateUrl: './singin.component.html',
+  styleUrls: ['./singin.css']
 })
-export class RegisterComponent implements OnInit {
+export class SinginComponent implements OnInit {
 
   usuario: Usuario = {
     nombre:'',
     contrasenya:'',
-    rol:'USER'
   }
 
   constructor(private usuarioservice: UsuarioService) { }
