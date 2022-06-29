@@ -8,6 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { SinginComponent } from './component/singin/singin.component';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { CommonModule } from '@angular/common';
     RegisterComponent,
     HomeComponent,
     InicioComponent,
+    SinginComponent
   ],
 
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
